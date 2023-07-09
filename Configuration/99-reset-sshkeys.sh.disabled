@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Set DEBIAN_FRONTEND to noninteractive
+export DEBIAN_FRONTEND=noninteractive
+
+# Check if the script is run with root privileges
+if [ "$EUID" -ne 0 ]; then
+  echo "Please run the script as root or using sudo."
+  exit 1
+fi
+
+# Remove the SSH host keys
+rm /etc/ssh/ssh_host_*
+
+# Regenerate the SSH host keys
+dpkg-reconfigure openssh-server
+
+echo "SSH configuration has been reset. SSH host keys have been recreated."
