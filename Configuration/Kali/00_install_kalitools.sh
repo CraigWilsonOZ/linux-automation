@@ -45,6 +45,9 @@ sudo apt install "${tools[@]}" -y 2>&1 | grep -v "WARNING: apt does not have a s
 echo "Removing Kali Linux repositories from APT..."
 sudo rm /etc/apt/sources.list.d/kali.list
 sudo apt-key del ED444FF07D8D0BF6
+
+touch ~/.hushlogin
+
 sudo apt update 2>&1 | grep -v "WARNING: apt does not have a stable CLI interface"
 
 echo "Installation complete!"
