@@ -10,7 +10,7 @@ This script provides a solution for remotely executing shell scripts stored in a
 
 ## How it Works
 
-![Flow](Assets\small.png)
+![Flow](Assets/small.png)
 
 The steps are as follows:
 
