@@ -13,8 +13,8 @@ if [ "$EUID" -ne 0 ]; then
 fi
 
 # Update and install dependencies
-sudo apt-get update
-sudo apt-get install ca-certificates curl gnupg -y
+sudo apt-get update 2>&1 | grep -v "WARNING: apt does not have a stable CLI interface"
+sudo apt-get install ca-certificates curl gnupg -y 2>&1 | grep -v "WARNING: apt does not have a stable CLI interface"
 
 # Add Docker’s official GPG key
 sudo install -m 0755 -d /etc/apt/keyrings
@@ -28,9 +28,9 @@ echo \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 # Install Docker Engine
-sudo apt-get update
+sudo apt-get update 2>&1 | grep -v "WARNING: apt does not have a stable CLI interface"
 
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y 2>&1 | grep -v "WARNING: apt does not have a stable CLI interface"
 
 # Docker Test
 # sudo docker run hello-world

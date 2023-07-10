@@ -16,10 +16,10 @@ fi
 # Prerequisites
 
 # Update package lists
-sudo apt update
+sudo apt update 2>&1 | grep -v "WARNING: apt does not have a stable CLI interface"
 
 # Install dependencies
-sudo apt install libunwind8 -y
+sudo apt install libunwind8 -y 2>&1 | grep -v "WARNING: apt does not have a stable CLI interface"
 
 # workaround for raspberry pi 4, download from https://packages.debian.org/bullseye/libssl1.1
 mkdir ~/downloads

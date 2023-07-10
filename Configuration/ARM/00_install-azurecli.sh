@@ -13,8 +13,8 @@ if [ "$EUID" -ne 0 ]; then
 fi
 
 # Update and install dependencies
-sudo apt update
-sudo apt install ca-certificates curl apt-transport-https lsb-release gnupg
+sudo apt update 2>&1 | grep -v "WARNING: apt does not have a stable CLI interface"
+sudo apt install ca-certificates curl apt-transport-https lsb-release gnupg 2>&1 | grep -v "WARNING: apt does not have a stable CLI interface"
 
 # Add Microsoft official GPG key
 sudo mkdir -p /etc/apt/keyrings
@@ -29,5 +29,5 @@ echo "deb [arch=`dpkg --print-architecture` signed-by=/etc/apt/keyrings/microsof
     sudo tee /etc/apt/sources.list.d/azure-cli.list
 
 # Install Azure CLI
-sudo apt update
-sudo apt install azure-cli
+sudo apt update 2>&1 | grep -v "WARNING: apt does not have a stable CLI interface"
+sudo apt install azure-cli 2>&1 | grep -v "WARNING: apt does not have a stable CLI interface"
