@@ -30,7 +30,6 @@ tools=(
 
 # Add Kali Linux repositories to APT
 echo "Adding Kali Linux repositories to APT..."
-echo "Adding Kali Linux repositories to APT..."
 echo "deb http://http.kali.org/kali kali-rolling main non-free contrib" | sudo tee /etc/apt/sources.list.d/kali.list
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys ED444FF07D8D0BF6 2>&1 | grep -v "WARNING: apt does not have a stable CLI interface"
 
