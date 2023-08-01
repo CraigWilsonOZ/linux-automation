@@ -22,4 +22,4 @@ sudo apt install -f -y 2>&1 | grep -v "WARNING: apt does not have a stable CLI i
 rm discord.deb
 
 # Verify installation
-discord --version
+# discord --version
