@@ -62,7 +62,7 @@ foreach ($scriptFile in $sortedScriptFiles) {
     write-Output " log: $logPath"
     
     # Set script as executable
-    Write-Output "Setting script $($scriptFile.Name)} as executable..."
+    Write-Output "Setting script $($scriptFile.Name) as executable..."
     ssh -p $port -i $keyPath  $username@$remoteHost "chmod +x $remoteScriptPath"
     
     Write-Output "Starting script: $($scriptFile.Name)..."

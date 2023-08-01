@@ -13,7 +13,10 @@ fi
 sudo apt update 2>&1 | grep -v "WARNING: apt does not have a stable CLI interface"
 
 # install base tools
-sudo apt install htop cmatrix -y 2>&1 | grep -v "WARNING: apt does not have a stable CLI interface"
+sudo apt install htop cmatrix curl wget tmux -y 2>&1 | grep -v "WARNING: apt does not have a stable CLI interface"
 
 # install development tools
 sudo apt install build-essential git -y 2>&1 | grep -v "WARNING: apt does not have a stable CLI interface"
+
+# install connectivity
+sudo apt install openvpn -y 2>&1 | grep -v "WARNING: apt does not have a stable CLI interface"

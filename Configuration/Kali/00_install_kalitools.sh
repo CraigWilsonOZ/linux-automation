@@ -13,7 +13,7 @@ fi
 tools=(
   nmap
   metasploit-framework
-  # burpsuite
+  burpsuite
   sqlmap
   aircrack-ng
   john
