@@ -63,6 +63,7 @@ A small bonus is Azure CLI. Testing was done on Raspberry PI 4 with Ubuntu 32bit
 ├── Assets
 │
 ├── Configuration
+│   ├── Ubuntu-Desktop
 │   ├── ARM
 │   ├── ARMhf
 │   │   └── AzCLI
