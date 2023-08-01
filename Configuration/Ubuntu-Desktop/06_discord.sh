@@ -13,7 +13,7 @@ fi
 wget -O discord.deb "https://discordapp.com/api/download?platform=linux&format=deb"
 
 # Install discord using dpkg
-sudo dpkg -i -y discord.deb
+sudo dpkg -i discord.deb
 
 # fix dependencies
 sudo apt install -f -y 2>&1 | grep -v "WARNING: apt does not have a stable CLI interface"
