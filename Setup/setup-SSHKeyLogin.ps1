@@ -29,6 +29,7 @@ if (-not (Test-Path $keyPath)) {
 # Copy public key to remote host using password authentication
 Write-Output "Copying public key to remote host..."
 # Note: You will need to manually enter the password for this step
+ssh -p $port ${username}@${remoteHost} "mkdir -p ~/.ssh"
 scp -P $port "${keyPath}.pub" "${username}@${remoteHost}:~/.ssh/id_rsa.pub"
 Write-Output "Public key copied to remote host."
 
