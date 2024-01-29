@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# Set DEBIAN_FRONTEND to noninteractive
+export DEBIAN_FRONTEND=noninteractive
+
+# Check if the script is run with root privileges
+if [ "$EUID" -ne 0 ]; then
+  echo "Please run the script as root or using sudo."
+  exit 1
+fi
+
+#!/bin/bash
+
+# Clear the history
+history -c
+
+# Delete the history file
+rm -f ~/.bash_history
+rm -f ~/.zsh_history
+rm -f ~/.fish_history
+
+# Create a new, empty history file
+touch ~/.bash_history
+touch  ~/.zsh_history
+touch ~/.fish_history
+
+# Reload the history
+history -c
+history -r

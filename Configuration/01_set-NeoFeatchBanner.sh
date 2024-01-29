@@ -28,9 +28,9 @@ cat << EOF > /etc/profile.d/00-neofetch.sh
 neofetch
 
 # Display the MOTD updates
-/etc/update-motd.d/90-updates-available.disabled
-/etc/update-motd.d/98-reboot-required.disabled
-/etc/update-motd.d/98-fsck-at-reboot.disabled
+#/etc/update-motd.d/90-updates-available.disabled
+#/etc/update-motd.d/98-reboot-required.disabled
+#/etc/update-motd.d/98-fsck-at-reboot.disabled
 
 EOF
 
@@ -52,3 +52,5 @@ mv /etc/update-motd.d/95-hwe-eol /etc/update-motd.d/95-hwe-eol.disabled
 mv /etc/update-motd.d/97-overlayroot /etc/update-motd.d/97-overlayroot.disabled
 mv /etc/update-motd.d/98-fsck-at-reboot /etc/update-motd.d/98-fsck-at-reboot.disabled
 mv /etc/update-motd.d/98-reboot-required /etc/update-motd.d/98-reboot-required.disabled
+mv /etc/update-motd.d/50-motd-news.dpkg-new /etc/update-motd.d/50-motd-news.dpkg-new.disabled
+mv /etc/update-motd.d/60-unminimize /etc/update-motd.d/60-unminimize.disabled

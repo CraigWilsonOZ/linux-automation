@@ -32,5 +32,20 @@ sudo apt-get update 2>&1 | grep -v "WARNING: apt does not have a stable CLI inte
 
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y 2>&1 | grep -v "WARNING: apt does not have a stable CLI interface"
 
+# Create Docker Group
+GROUP="docker"
+
+# Check if the group already exists
+if getent group "$GROUP" > /dev/null 2>&1; then
+    echo "Group '$GROUP' already exists."
+else
+    # Add the group if it doesn't exist
+    echo "Adding group '$GROUP'."
+    sudo groupadd "$GROUP"
+fi
+
+# Add your user to the docker group.
+sudo usermod -aG docker $USER
+
 # Docker Test
 # sudo docker run hello-world
