@@ -1,0 +1,17 @@
+### Adding a custom colour configuration to the terminal
+
+# Backup .bashrc file
+cp ~/.bashrc ~/.bashrc.backup
+
+# Add custom colour configuration to .profile file
+echo "export LS_COLORS='no=00;32:'\$LS_COLORS" >> ~/.profile
+
+# Add custom colour configuration to .bashrc file
+sed -i '/^else/,/^fi/ s|PS1=.*|PS1='\''\\\\u@\\\\h:\\\\w\\$ '\''|' ~/.bashrc
+sed -i '/^if \[ "\$color_prompt" = yes \]; then/,/^else/ s|PS1=.*|PS1="\\\\[\\\\033[38;5;95m\\\\]\\\\u\\\\[\\\\033[m\\\\]@\\\\[\\\\033[38;5;24m\\\\]\\\\h:\\\\[\\\\033[38;5;214m\\\\]\\\\w\\\\[\\\\033[38;5;32m\\\\]\\$ "|' ~/.bashrc
+
+# Add custom colour configuration to .vimrc file
+echo "colorscheme industry" >> ~/.vimrc
+
+
+
